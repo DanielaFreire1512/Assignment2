@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  
+}
+.weather-info {
+  margin-top: 18px;
+}
+.icon {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.container {
+  margin: auto;
+  background-color: rgb(169, 168, 168);
+  padding: 3rem;
+  width: 15rem;
+  
+}
+
+#loading-spinner {
+  color: grey;
+  text-align: center;
+  padding: 20px;
+ 
+}
+
+.header {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #c4c1c1;
+}
+
+h1 {
+  color:rgb(76, 75, 75);
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  background-color: #393838;
+  padding: 1rem;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
